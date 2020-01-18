@@ -1,5 +1,4 @@
 import React from 'react';
-import { Text } from 'react-native';
 import styled from 'styled-components/native';
 import { ScrollView } from 'react-native-gesture-handler';
 import Item from './Item';
@@ -12,7 +11,9 @@ const ListItem = (props) => {
                 {props.data.map((photo) => (
                     <Item 
                         key={photo.id}
+                        navigation={props.navigation}
                         image={photo.urls.small}
+                        imageFull={photo.urls.full}
                         name={photo.user.name}
                         userImage={photo.user.profile_image.small} 
                     />

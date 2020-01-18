@@ -3,7 +3,7 @@ import axios from 'axios';
 import ListItem from '../components/GalleryImage/ListItem';
 
 const HomeScreen = (props) => {
-    const {navigation} = props.navigation;          //navigation
+    const {navigate} = props.navigation;          //react-native navigation
     const [photos, setPhotos] = useState([]);       //state
     
     useEffect(() => {
@@ -18,7 +18,7 @@ const HomeScreen = (props) => {
     }, []);
 
     return (
-        <ListItem data={photos} />
+        <ListItem data={photos} navigation={navigate} />
     );
 }
 

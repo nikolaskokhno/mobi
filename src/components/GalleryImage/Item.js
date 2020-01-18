@@ -5,7 +5,15 @@ import styled from 'styled-components/native';
 const Item = (props) => {
 
     return (
-        <Card>
+        <Card onPress={() => {
+            props.navigation('PhotoScreen',
+            {
+                FullPhoto: props.imageFull,
+                UserPhoto: props.userImage,
+                UserName: props.name
+            })
+        }
+        }>
             <Image 
                 style={{
                     width: '100%',
@@ -56,7 +64,7 @@ const BodyItem = styled.View`
     width: 100%;
 `;
 
-const Card = styled.View`
+const Card = styled.TouchableOpacity`
     position: relative;
     width: 100%;
     margin-bottom: 15px;
